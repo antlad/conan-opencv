@@ -30,11 +30,11 @@ class TestPackageConan(ConanFile):
             test_images = []
             if self.options["opencv"].jpeg:
                 test_images.append('lena.jpg')
-            if self.options["opencv"].libtiff != False:
-                test_images.append('normal.tiff')
-                if self.options["libtiff"].lzma != False:
-                    test_images.append('lzma.tiff')
-                if self.options['libtiff'].jbig != False:
-                    test_images.append('jbig.tiff')
+            #if self.options["opencv"].libtiff != False:
+                #test_images.append('normal.tiff')
+                #if self.options["libtiff"].lzma != False:
+                    #test_images.append('lzma.tiff')
+                #if self.options['libtiff'].jbig != False:
+                    #test_images.append('jbig.tiff')
             for image in test_images:
                 self.run(('load-image.exe' if self.settings.os == 'Windows' else './load-image') + ' ' + image, run_environment=True)
